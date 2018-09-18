@@ -98,11 +98,11 @@ defmodule ExTwitter.API.Base do
     else
       {:error, :invalid, pos} ->
         IO.inspect header
-        IO.inspect body
+        IO.inspect(body, limit: :infinity)
         raise(ExTwitter.ParseError, message: "Could not parse JSON at position #{pos} for body:\n #{body}", body: body, header: header)
       {:error, {:invalid, _, pos}} ->
         IO.inspect header
-        IO.inspect body
+        IO.inspect(body, limit: :infinity)
         raise(ExTwitter.ParseError, message: "Could not parse JSON at position #{pos}: \n #{body}", body: body, header: header)
     end
   end

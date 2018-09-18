@@ -3,7 +3,7 @@ defmodule ExTwitter.Error do
 end
 
 defmodule ExTwitter.ParseError do
-  defexception [:message, :body]
+  defexception [:message, :body, :header]
 end
 
 defmodule ExTwitter.RateLimitExceededError do
